@@ -53,7 +53,7 @@ app.post("/thumbnail", upload.single("video"), async (req, res) => {
       "-i",
       inputFileName,
       "-filter_complex",
-      "fps=30,scale=720:-1:flags=lanczos[x];[x]split[x1][x2];[x1]palettegen[p];[x2][p]paletteuse",
+      "fps=5,scale=720:-1:flags=lanczos[x];[x]split[x1][x2];[x1]palettegen[p];[x2][p]paletteuse",
       "-f",
       "mp4",
       outputFileName
