@@ -28,9 +28,10 @@ const upload = multer({
 });
 
 app.use(cors());
+app.use(express.static("public"));
 
 app.get("/", (req, res) => {
-  return res.send("helllooooooooooooooooo");
+  return res.json({ message: "helllooooooooooooooooo" });
 });
 
 app.post("/thumbnail", upload.single("video"), async (req, res) => {
